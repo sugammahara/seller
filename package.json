@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-multi-carousel": "^2.8.5",
+    "strapi": "^3.6.11"
+  }
+}

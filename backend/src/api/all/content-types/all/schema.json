@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "alls",
+  "info": {
+    "singularName": "all",
+    "pluralName": "alls",
+    "displayName": "All",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "string"
+    },
+    "price": {
+      "type": "float"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    }
+  }
+}
