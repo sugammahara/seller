@@ -20,6 +20,16 @@ import Workshopform from "./Components/OffersForm";
 import { createBrowserRouter } from "react-router-dom";
 import OffersForm from "./Components/OffersForm";
 import Offers from "./Components/Offers";
+import AdminLogin from "./Components/Admin/Login";
+import AdminLayout from "./Layout/AdminLayout";
+import AdminDashboard from "./Components/Admin/Dashboard";
+import ProductsManager from "./Components/Admin/Products";
+import BidsManager from "./Components/Admin/Bids";
+import GalleryManager from "./Components/Admin/Gallery";
+import MessagesManager from "./Components/Admin/Messages";
+import OffersManager from "./Components/Admin/Offers";
+import ReviewManager from "./Components/Admin/Reviews";
+import AuthManager from "./Components/Admin/Auths";
 
 const router = createBrowserRouter([
   {
@@ -43,7 +53,6 @@ const router = createBrowserRouter([
         element: <Owner />,
       },
 
-      
       {
         path: "/chooseform",
         element: <Chooseform />,
@@ -68,7 +77,7 @@ const router = createBrowserRouter([
         path: "/overview/:id",
         element: <Productitem />,
       },
-     
+
       {
         path: "/offers/:id",
         element: <Offers />,
@@ -81,7 +90,6 @@ const router = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
-     
     ],
   },
 
@@ -96,6 +104,48 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup />,
+      },
+    ],
+  },
+  {
+    path: "/admin/login",
+    element: <AdminLogin />,
+  },
+  {
+    path: "/admin",
+    element: <AdminLayout />,
+    children: [
+      {
+        path: "dashboard",
+        element: <ProductsManager />,
+      },
+      {
+        path: "products",
+        element: <ProductsManager />,
+      },
+      {
+        path: "bids",
+        element: <BidsManager />,
+      },
+      {
+        path: "gallery",
+        element: <GalleryManager />,
+      },
+      {
+        path: "messages",
+        element: <MessagesManager />,
+      },
+      {
+        path: "offers",
+        element: <OffersManager />,
+      },
+      {
+        path: "reviews",
+        element: <ReviewManager />,
+      },
+      {
+        path: "auths",
+        element: <AuthManager />,
       },
     ],
   },

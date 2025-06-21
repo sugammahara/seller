@@ -1,10 +1,12 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const StateContext = createContext({
   user: null,
   token: null,
+
   setuser: () => {},
   settoken: () => {},
+
   ShowSearch: false,
   set_ShowSearch: () => {},
   payment: false,
@@ -13,11 +15,25 @@ const StateContext = createContext({
 
 export const ContextProvider = ({ children }) => {
   const [token, settoken] = useState(null);
+  const [admin, setAdmin] = useState();
   const [payment, set_payment] = useState(false);
   const [ShowSearch, set_ShowSearch] = useState(false);
+  useEffect(() => {
+    const Admin = localStorage.getItem("admin");
+    if (Admin) {
+      setAdmin(Admin);
+    }
+  }, []);
   return (
     <StateContext.Provider
-      value={{ ShowSearch, set_ShowSearch, payment, set_payment }}
+      value={{
+        ShowSearch,
+        set_ShowSearch,
+        payment,
+        set_payment,
+        admin,
+        setAdmin,
+      }}
     >
       {children}
       {/* every component  sits here and accesses all the states */}
